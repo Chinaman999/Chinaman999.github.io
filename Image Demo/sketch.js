@@ -5,20 +5,30 @@
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
 
-let gear;
+let Yoda;
+let scalar;
 
 function preload() {
-  gear = loadimage("assets/gear.png");
+  Yoda = loadImage("assets/Baby.jpeg");
 }
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  scalar = 0.25;
 }
 
 function draw() {
   background(220);
   fill("red")
-  // rect(mouseX, mouseY, 75, 75);
-  image(gear, mouseX, mouseY, 50, 50);
+  image(Yoda, mouseX, mouseY, scalar*Yoda.width, scalar*Yoda.height);
+}
 
+function mouseWheel(event) {
+  console.log(scalar);
+  if (event.delta > 0) {
+    scalar *= 1.1;
+  }
+  else {
+    scalar *= 0.9;
+  }
 }
