@@ -21,6 +21,8 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  angleMode(DEGREES);
+  imageMode(CENTER);
   x = width/2;
   y = height/2;
 }
@@ -34,6 +36,7 @@ function draw() {
 
 function keyPressed() {
   if (key === "w") {
+    
     movingUp = true;
   }
   if (key === "a") {
