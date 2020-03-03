@@ -7,8 +7,8 @@
 
 let x;
 let y;
-let dx = 5;
-let dy = 5;
+let dx = 3;
+let dy = 3;
 let movingUp = false;
 let movingDown = false;
 let movingLeft = false;
@@ -17,20 +17,21 @@ let movingRight = false;
 
 function preload() {
   pacman = loadImage("assets/Pacman.png")
+  map = loadImage("assets/PacmanMap.jpg")
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(1594, 755);
   angleMode(DEGREES);
-  imageMode(CENTER);
+  //imageMode(CENTER);
   x = width/2;
   y = height/2;
 }
 
 function draw() {
-  background("black");
+  background(map, 1594, 755);
   movePacman();
-  image(pacman, x, y, 50, 50);
+  image(pacman, x, y, 40, 40);
 
 }
 
