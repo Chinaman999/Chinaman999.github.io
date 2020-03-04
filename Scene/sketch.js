@@ -15,9 +15,11 @@ let movingLeft = false;
 let movingRight = false;
 
 
+
 function preload() {
   pacman = loadImage("assets/Pacman.png")
   map = loadImage("assets/PacmanMap.jpg")
+  pinky = loadImage("assets/Pinky.png")
 }
 
 function setup() {
@@ -32,6 +34,7 @@ function draw() {
   background(map, 1594, 755);
   movePacman();
   image(pacman, x, y, 40, 40);
+  image(pinky, x, y, 40, 40)
 
 }
 
@@ -80,4 +83,6 @@ function movePacman() {
     x += dx;
   }
 }
+
+
 
