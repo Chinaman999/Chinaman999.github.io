@@ -5,6 +5,7 @@
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
 
+//-PacMan Variables
 let x;
 let y;
 let dx = 3;
@@ -13,13 +14,23 @@ let movingUp = false;
 let movingDown = false;
 let movingLeft = false;
 let movingRight = false;
+//-Inky Variables
+let PinkyX;
+let PinkyY;
+let PinkyDX = 3;
+let PinkyDY = 3;
+let PinkyMovingUp = false;
+let PinkyMovingDown = false;
+let PinkyMovingLeft = false;
+let PinkyMovingRight = false;
+
 
 
 
 function preload() {
   pacman = loadImage("assets/Pacman.png")
   map = loadImage("assets/PacmanMap.jpg")
-  pinky = loadImage("assets/Pinky.png")
+  Pinky = loadImage("assets/Pinky.png")
 }
 
 function setup() {
@@ -28,16 +39,19 @@ function setup() {
   //imageMode(CENTER);
   x = width/2;
   y = height/2;
+  inkyX = width/2;
+  inkyY = height/2;
 }
 
 function draw() {
   background(map, 1594, 755);
   movePacman();
   image(pacman, x, y, 40, 40);
-  image(pinky, x, y, 40, 40)
+  movePinky();
+  image(Pinky, PinkyX, PinkyY, 40, 40);
 
 }
-
+//PacMan Movement
 function keyPressed() {
   if (key === "w") {
     
@@ -55,7 +69,7 @@ function keyPressed() {
 }
 
 function keyReleased() {
-  if (key === "w") {
+  if (key === "w") { 
     movingUp = false;
   }
   if (key === "a") {
@@ -84,5 +98,53 @@ function movePacman() {
   }
 }
 
+//Pinky Movement
+function keyPressed() {
+  if (keyCode === UP_ARROW || key === "w") {
+    
+    PinkyMovingUp = true;
+  }
+  if (keyCode ==="LEFT_ARROW") {
+    PinkyMovingLeft = true;
+  }
+  if (keyCode === "DOWN_ARROW") {
+    PinkyMovingDown = true;
+  }
+  if (keyCode === "RIGHT_ARROW") {
+    PinkyMovingRight = true;
+  }
+}
+
+function keyReleased() {
+  if (keyCode === "UP_ARROW") { 
+    PinkyMovingUp = false;
+  }
+  if (keyCode === "LEFT_ARROW") {
+    PinkyMovingLeft = false;
+  }
+  if (keyCode === "DOWN_ARROW") {
+    PinkyMovingDown = false;
+  }
+  if (keyCode === "RIGHT_ARROW") {
+    PinkyMovingRight = false;
+  }
+}
+
+
+
+function movePinky() {
+  if (PinkyMovingUp) {
+    PinkyY -= PinkyDY;
+  }
+  if (PinkyMovingLeft) {
+    PinkyX -= PinkyDX;
+  }
+  if (PinkyMovingDown) {
+    PinkyY += PinkyDY;
+  }
+  if (PinkyMovingRight) {
+    PinkyX += PinkyDX;
+  }
+}
 
 
