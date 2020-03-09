@@ -100,32 +100,31 @@ function movePacman() {
 
 //Pinky Movement
 function keyPressed() {
-  if (keyCode === UP_ARROW || key === "w") {
-    
+  if (keyCode === UP_ARROW) {
     PinkyMovingUp = true;
   }
-  if (keyCode ==="LEFT_ARROW") {
+  if (keyCode ===LEFT_ARROW) {
     PinkyMovingLeft = true;
   }
-  if (keyCode === "DOWN_ARROW") {
+  if (keyCode === DOWN_ARROW) {
     PinkyMovingDown = true;
   }
-  if (keyCode === "RIGHT_ARROW") {
+  if (keyCode === RIGHT_ARROW) {
     PinkyMovingRight = true;
   }
 }
 
 function keyReleased() {
-  if (keyCode === "UP_ARROW") { 
+  if (keyCode === UP_ARROW) { 
     PinkyMovingUp = false;
   }
-  if (keyCode === "LEFT_ARROW") {
+  if (keyCode === LEFT_ARROW) {
     PinkyMovingLeft = false;
   }
-  if (keyCode === "DOWN_ARROW") {
+  if (keyCode === DOWN_ARROW) {
     PinkyMovingDown = false;
   }
-  if (keyCode === "RIGHT_ARROW") {
+  if (keyCode === RIGHT_ARROW) {
     PinkyMovingRight = false;
   }
 }
