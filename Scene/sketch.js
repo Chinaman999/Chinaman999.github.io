@@ -99,7 +99,7 @@ function movePacman() {
 }
 
 //Pinky Movement
-function keyPressed() {
+function PinkykeyPressed() {
   if (keyCode === UP_ARROW) {
     PinkyMovingUp = true;
   }
@@ -114,7 +114,7 @@ function keyPressed() {
   }
 }
 
-function keyReleased() {
+function PinkykeyReleased() {
   if (keyCode === UP_ARROW) { 
     PinkyMovingUp = false;
   }
