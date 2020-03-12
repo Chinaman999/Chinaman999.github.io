@@ -28,9 +28,9 @@ let PinkyMovingRight = false;
 
 
 function preload() {
-  pacman = loadImage("assets/Pacman.png")
-  map = loadImage("assets/PacmanMap.jpg")
-  Pinky = loadImage("assets/Pinky.png")
+  pacman = loadImage("assets/Pacman.png");
+  map = loadImage("assets/PacmanMap.jpg");
+  Pinky = loadImage("assets/Pinky.png");
 }
 
 function setup() {
